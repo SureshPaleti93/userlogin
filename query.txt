@@ -1,0 +1,13 @@
+addUserQuery = 
+      `
+        INSERT INTO user(username, name, password, gender, location)
+        VALUES(
+                '${username}',
+                '${name}',
+                '${password}',
+                '${gender}',
+                '${location}'
+        );`;
+        await db.run(addUserQuery);
+        response.status(200);
+        response.send("User created successfully");
