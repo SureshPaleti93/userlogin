@@ -3,7 +3,6 @@ const path = require("path");
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 
 const app = express();
 app.use(express.json());
@@ -123,6 +122,5 @@ app.put("/change-password", async (request, response) => {
     response.status(400);
     response.send("Invalid current password");
   }
-  response.send(isValidPassword);
 });
 module.exports = app;
